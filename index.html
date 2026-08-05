@@ -2,30 +2,46 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Cinema Sign A</title>
+<title>Cinema Sign</title>
+
 <style>
 html,body{
-margin:0;
-padding:0;
-width:100%;
-height:100%;
-overflow:hidden;
-background:#181818;
-font-family:Arial,Helvetica,sans-serif;
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#181818;
+    font-family:Arial,Helvetica,sans-serif;
 }
+
 #text{
-position:absolute;
-top:20px;
-left:30px;
-color:#F5F5F5;
-font-size:260px;
-font-weight:900;
-text-shadow:0 0 6px rgba(255,255,255,.35),0 0 12px rgba(255,255,255,.18);
-user-select:none;
+    position:absolute;
+    top:20px;
+    left:30px;
+
+    color:#F5F5F5;
+    font-size:260px;
+    font-weight:900;
+
+    text-shadow:
+        0 0 6px rgba(255,255,255,.35),
+        0 0 12px rgba(255,255,255,.18);
+
+    user-select:none;
 }
 </style>
 </head>
+
 <body>
-<div id="text">A</div>
+
+<div id="text"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const text = params.get("text") || "A";
+
+document.getElementById("text").textContent = text.toUpperCase();
+</script>
+
 </body>
 </html>
